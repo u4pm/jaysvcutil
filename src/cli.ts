@@ -11,6 +11,7 @@ var argv = yargs
 	.describe('m', 'The URI of the OData $metadata definition. Can be an online resource or a local file as well.')
 	.describe('o', 'The name of the generated output file. Default is JayDataContext.js.')
 	.describe('t', 'The name of the generated TypeScript definition file. Default is JayDataContext.d.ts.')
+	.describe('i', 'Ignore including JayData core as header in the generated TypeScript definition file.')
 	.describe('n', 'The namespace of the generated JayData EntitContext class. Default is taken from the metadata.')
 	.describe('c', 'The name of the base class for the generated entity context. Default is $data.EntityContext.')
 	.describe('e', 'The name of the base class for the generated entity types. Default is $data.Entity.')
@@ -24,6 +25,7 @@ var argv = yargs
 	.alias('m', 'metadataUri')
 	.alias('o', 'out')
 	.alias('t', 'dts')
+	.alias('i', 'ingoreCoreInDts')
 	.alias('n', 'namespace')
 	.alias('c', 'contextBaseClass')
 	.alias('e', 'entityBaseClass')
@@ -67,7 +69,9 @@ else if (!argv.metadataUri){
             entitySetType: argv.entitySetBaseClass,
             contextType: argv.contextBaseClass,
             collectionBaseType: argv.collectionBaseClass,
-            generateTypes: false
+            generateTypes: false,
+			includeCoreInDts: !!argv.ingoreCoreInDts
+
 		}).then(process, function(err){
 			console.log(err);
 		});
@@ -87,7 +91,8 @@ else if (!argv.metadataUri){
                     entitySetType: argv.entitySetBaseClass,
                     contextType: argv.contextBaseClass,
                     collectionBaseType: argv.collectionBaseClass,
-                    generateTypes: false
+                    generateTypes: false,
+					ingoreCoreInDts: !!argv.ingoreCoreInDts
 				}).parse($metadata));
 			}
 		});

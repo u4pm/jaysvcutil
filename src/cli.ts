@@ -25,7 +25,7 @@ var argv = yargs
 	.alias('m', 'metadataUri')
 	.alias('o', 'out')
 	.alias('t', 'dts')
-	.alias('i', 'ingoreCoreInDts')
+	.alias('i', 'ignoreCoreInDts')
 	.alias('n', 'namespace')
 	.alias('c', 'contextBaseClass')
 	.alias('e', 'entityBaseClass')
@@ -70,7 +70,7 @@ else if (!argv.metadataUri){
             contextType: argv.contextBaseClass,
             collectionBaseType: argv.collectionBaseClass,
             generateTypes: false,
-			includeCoreInDts: !!argv.ingoreCoreInDts
+			ignoreCoreInDts: !!argv.ignoreCoreInDts
 
 		}).then(process, function(err){
 			console.log(err);
@@ -92,7 +92,7 @@ else if (!argv.metadataUri){
                     contextType: argv.contextBaseClass,
                     collectionBaseType: argv.collectionBaseClass,
                     generateTypes: false,
-					ingoreCoreInDts: !!argv.ingoreCoreInDts
+					ignoreCoreInDts: !!argv.ignoreCoreInDts
 				}).parse($metadata));
 			}
 		});

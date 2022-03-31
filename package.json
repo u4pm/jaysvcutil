@@ -1,5 +1,5 @@
 {
-  "name": "jaysvcutil",
+  "name": "u4pm-jaysvcutil",
   "description": "OData v4 metadata generator tool for JayData",
   "keywords": [
     "HTML5 data management",
@@ -19,7 +19,7 @@
     "url": "http://jaydata.org"
   },
   "dependencies": {
-    "jaydata-dynamic-metadata": "git+https://github.com/u4pm/jaydata-dynamic-metadata.git#6f3ecba99894ec6564e374e6e6edeb45260ca531",
+    "u4pm-jaydata-dynamic-metadata": "0.1.20",
     "js-beautify": "^1.5.10",
     "yargs": "^3.32.0"
   },

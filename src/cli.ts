@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import * as yargs from 'yargs';
-import { DynamicMetadata, MetadataHandler } from 'jaydata-dynamic-metadata';
+import { DynamicMetadata, MetadataHandler } from 'u4pm-jaydata-dynamic-metadata';
 import * as fs from 'fs';
 import * as js_beautify from 'js-beautify';
 
